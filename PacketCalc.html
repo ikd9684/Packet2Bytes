@@ -1,13 +1,33 @@
-<html>
+<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>PacketCalc - 9684.jp</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
 
 <style>
 * {
-  font-family: "MS ゴシック";
-  font-size: 0.96em;
 }
+div.MySoftBank {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 10px;
+}
+div.Accordion {
+  padding: 10px;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
 input.CALC_TEXT {
   border: 1px dotted black;
   background-color: #ff8;
@@ -16,6 +36,7 @@ input.CALC_TEXT {
   width: 8em;
 }
 table.CALC_TABLE {
+  margin-bottom: 50px;
 }
 tr.CALC_TABLE {
 }
@@ -83,11 +104,27 @@ function id(id) {
 
 <body onload="onLoad();">
 
+<div data-role="header"> 
+  <h3>PacketCalc</h3> 
+</div>
+
+<div data-role="collapsible" class="Accordion">
+  <h3>パケット数って？</h3>
+  <p class="Accordion">
+    <div class="MySoftBank"><a href="https://my.softbank.jp" target="MySoftBank">My SoftBank を開く</a></div>
+    <img src="./001.png" style="border: 4px dotted #888;">
+    <img src="./002.png" style="border: 4px dotted #888;">
+    <img src="./003.png" style="border: 4px dotted #888;">
+    <img src="./004.png" style="border: 4px dotted #888;">
+    <img src="./005.png" style="border: 4px dotted #888;">
+  </p>
+</div>
+
+
 <table id="" class="CALC_TABLE">
   <tr class="CALC_TABLE">
     <td class="CALC_TABLE">
-      バケット数<br/>
-      <input type="text" class="CALC_TEXT" onfocus="onFocusText();" onblur="onBlurText();" id="packets" value="">
+      <input type="text" placeholder="パケット数" class="CALC_TEXT" onfocus="onFocusText();" onblur="onBlurText();" id="packets" value="">
     </td>
     <td class="CALC_TABLE">pkt (1kt= 128 bytes)</td>
   </tr>
@@ -113,5 +150,16 @@ function id(id) {
     <td class="CALC_TABLE">YEN (1pkt = <span id="labelYpp"></span>yen)</td>
   </tr>
 </table>
+
+<div style="text-align: center;">
+  【免責事項】
+</div>
+<div style="padding: 5px; font-size: 0.8em;">
+  このツールを利用して起きるいかなる損害に対しても作者は責任を負わないものとします。上記に同意いただける場合のみこのツールをご利用できます。また、ご利用になった時点で、同意したものとみなします。
+</div>
+
+<div data-role="footer">
+  <h4>(c) ikd9684 2012</h4>
+</div>
 
 </body>
